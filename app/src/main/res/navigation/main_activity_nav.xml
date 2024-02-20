@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/anasayfaFragment">
+
+    <fragment
+        android:id="@+id/anasayfaFragment"
+        android:name="com.example.navigationcomponentkullanimi.AnasayfaFragment"
+        android:label="fragment_anasayfa"
+        tools:layout="@layout/fragment_anasayfa" >
+        <action
+            android:id="@+id/detayGecis"
+            app:destination="@id/detayFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/gecisX"
+            app:destination="@id/thirdFragment" />
+        <argument
+            android:name="mesaj"
+            app:argType="string"
+            android:defaultValue="Mesaj" />
+    </fragment>
+    <fragment
+        android:id="@+id/detayFragment"
+        android:name="com.example.navigationcomponentkullanimi.DetayFragment"
+        android:label="fragment_detay"
+        tools:layout="@layout/fragment_detay" >
+        <argument
+            android:name="mesaj"
+            app:argType="string"
+            android:defaultValue="Merhab" />
+        <action
+            android:id="@+id/gecisB"
+            app:destination="@id/fourFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.example.navigationcomponentkullanimi.ThirdFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_third" >
+        <action
+            android:id="@+id/GecisYy"
+            app:destination="@id/fiveFragment" />
+        <argument
+            android:name="mesaj"
+            app:argType="string"
+            android:defaultValue="Mesaj" />
+    </fragment>
+    <fragment
+        android:id="@+id/fourFragment"
+        android:name="com.example.navigationcomponentkullanimi.FourFragment"
+        android:label="fragment_four"
+        tools:layout="@layout/fragment_four" >
+        <argument
+            android:name="mesaj"
+            app:argType="string"
+            android:defaultValue="Mesajb" />
+        <action
+            android:id="@+id/gecisY"
+            app:destination="@id/fiveFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fiveFragment"
+        android:name="com.example.navigationcomponentkullanimi.FiveFragment"
+        android:label="fragment_five"
+        tools:layout="@layout/fragment_five" >
+        <argument
+            android:name="mesaj"
+            app:argType="string"
+            android:defaultValue="MesajY" />
+        <action
+            android:id="@+id/Gerigecis"
+            app:destination="@id/anasayfaFragment"
+            app:popUpTo="@id/anasayfaFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
